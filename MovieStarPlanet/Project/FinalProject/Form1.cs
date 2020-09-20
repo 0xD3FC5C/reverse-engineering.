@@ -46,7 +46,13 @@ namespace FinalProject
                 var AMFHttpClientByteArray = new ByteArrayContent(AMFBytes);
                 AMFHttpClientByteArray.Headers.ContentType = new MediaTypeHeaderValue("application/x-amf");
 
-                await client.PostAsync(gateway, AMFHttpClientByteArray);
+                var response = await client.PostAsync(gateway, AMFHttpClientByteArray);
+
+                //Response
+                string responseString = response.Content.ReadAsStringAsync().Result;
+                string final = JsonConvert.SerializeObject(responseString);
+                MessageBox.Show(final);
+                
             }
 
             catch(WebException exception)
