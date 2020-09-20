@@ -7,4 +7,7 @@ I showed basic AMF called GetNameByActorId
 If u want to do better things u need to call object (new TicketObject) and add "Ticket" and "anyAttribute" variables.
 
 
+B==============================>
+
+
 
